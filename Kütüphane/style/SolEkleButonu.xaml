@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="Ekle_Image_Özellikleri" TargetType="Image">
+        <Setter Property="Source" Value="/images/icon/Kitap_Ekle_Normal.png"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Width" Value="auto"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Source" Value="/images/icon/Kitap_Ekle_Over.png"/>
+                <Setter Property="Height" Value="105"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="Ekle_Image_Border" TargetType="Border">
+        <Setter Property="Background" Value="#134187"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#99108BB9"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+   
+
+</ResourceDictionary>

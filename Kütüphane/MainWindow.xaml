@@ -1,0 +1,162 @@
+﻿<Window x:Class="Kütüphane.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kütüphane"
+        WindowStartupLocation="{StaticResource Formu_Merkezde_Aç}"
+        Title="MainWindow" Style="{StaticResource Ana_Form_Windows_Ayarları}">
+    <!--https://www.flaticon.com/packs/borrow-book-2?word=library-->
+    <Grid >
+        <Border BorderThickness="0,0,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <!--Logo,Program İsmi ve Tıklama Büyük Resim-->
+                <Border Style="{StaticResource Logo_Border}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" x:Name="LogoVeBaslik" MouseLeftButtonDown="Surukle">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0"/>
+                                <Image Grid.Column="1" Style="{StaticResource Logo_Image}"/>
+                                <Label  Grid.Column="2" Style="{StaticResource Logo_Label}"/>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="1" Style="{StaticResource Ekle_Image_Border}">
+                            <Image Name="Kitap_Ekle_Button" Grid.Row="1" Style="{StaticResource Ekle_Image_Özellikleri}"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <!--Mini Butonlar -->
+                <Border Grid.Row="0" Grid.Column="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <!-- Mini Butonların Borderi-->
+                        <Border Grid.Row="0" Background="White" x:Name="MiniButtonHeader" MouseLeftButtonDown="Surukle">
+                            <DockPanel HorizontalAlignment="Right">
+                                <Button Content="__" Style="{StaticResource Mini_Butonlar_Style}"  Template="{StaticResource Mini_Butonlar_Control }" x:Name="btn_minimize" Click="btn_minimize_Click"/>
+                                <Button Content="□" Style="{StaticResource Mini_Butonlar_Style}"  Template="{StaticResource Mini_Butonlar_Control }" x:Name="btn_maximize" Click="btn_maximize_Click" FontSize="24"/>
+                                <Button Content="x"  Style="{StaticResource Mini_Butonlar_Style}"  Template="{StaticResource Mini_Butonlar_Control}" x:Name="btn_kapat" Click="btn_kapat_Click"/>
+                            </DockPanel>
+                        </Border>
+                        <!--Haber Yazacak Alan-->
+                        <Border Grid.Row="1" Background="#134187">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/images/background/Karşılama_Ekranı_ArkaFon_1.png" Opacity="0.1" Stretch="Uniform"/>
+                                    </Border.Background>
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <DockPanel>
+                                            <Label Content="Toplam Kitap Sayısı" Style="{StaticResource Bilgi_Islem_Label}" FontSize="18"/>
+                                            <Label Content="1024" Style="{StaticResource Bilgi_Islem_Label}" Foreground="Yellow" FontSize="18"/>
+                                        </DockPanel>
+                                        <StackPanel>
+                                            <DockPanel>
+                                                <Label Content="Emanet:" Style="{StaticResource Bilgi_Islem_Label}"/>
+                                                <Label Content="124" Style="{StaticResource Bilgi_Islem_Label}" Foreground="Yellow"/>
+                                                <Label Content="Süresi Dolan:" Style="{StaticResource Bilgi_Islem_Label}"/>
+                                                <Label Content="14" Style="{StaticResource Bilgi_Islem_Label}" Foreground="Yellow"/>
+                                            </DockPanel>
+                                        </StackPanel>
+                                        <Label x:Name="Islem_Bilgi_Label" Style="{StaticResource Bilgi_Islem_Label}" Content="Hoşgeldiniz..."/>
+
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Column="1" HorizontalAlignment="Center">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/images/background/Karşılama_Ekranı_ArkaFon_2.png" Opacity="0.1" Stretch="Uniform"/>
+                                    </Border.Background>
+                                    <DockPanel>
+                                        <Image Source="images/icon/Admin.png" Width="72"/>
+                                        <StackPanel VerticalAlignment="Center">
+                                            <Label Content="Serhan KORAL" Foreground="White" Background="#FF3878F6" Width="100" HorizontalAlignment="Left"/>
+                                            <Label Content="Yönetici" Foreground="White" Background="#FF1E2612" Width="100" HorizontalAlignment="Left"/>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </Border>
+                            </Grid>
+
+                        </Border>
+                    </Grid>
+                </Border>
+                <!--Menü Yapımı-->
+                <Border Style="{StaticResource SolMenu_Border}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition  Height="170"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Style="{StaticResource SolMenu_StackPanel}">
+                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz" x:Name="Menu_Kitap_Listesi_Butonu" Click="Menu_Kitap_Listesi_Butonu_Click">
+                                <DockPanel Style="{StaticResource SolMenu_DockPanel}">
+                                    <Image Source="/images/icon/Kitap_Liste.png" Style="{StaticResource SolMenu_Image}"/>
+                                    <Label  Content="Kitap Listesi" Style="{StaticResource SolMenu_Label}"/>
+                                </DockPanel>
+                            </Button>
+                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz">
+                                <DockPanel  Style="{StaticResource SolMenu_DockPanel}">
+                                    <Image Source="/images/icon/Emanet_Kitap_Listesi.png" Style="{StaticResource SolMenu_Image}"/>
+                                    <Label Content="Emanet Listesi" Style="{StaticResource SolMenu_Label}"/>
+                                </DockPanel>
+                            </Button>
+                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz">
+                                <DockPanel Style="{StaticResource SolMenu_DockPanel}">
+                                    <Image Source="/images/icon/Zamanı_Dolanlar.png" Style="{StaticResource SolMenu_Image}"/>
+                                    <Label Content="Zamanı Dolanlar" Style="{StaticResource SolMenu_Label}" />
+                                </DockPanel>
+                            </Button>
+                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz">
+                                <DockPanel Style="{StaticResource SolMenu_DockPanel}">
+                                    <Image Source="/images/icon/Ayarlar.png" Style="{StaticResource SolMenu_Image}"/>
+                                    <Label Content="Ayarlar" Style="{StaticResource SolMenu_Label}"/>
+                                </DockPanel>
+                            </Button>
+                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz">
+                                <DockPanel Style="{StaticResource SolMenu_DockPanel}">
+                                    <Image Source="/images/icon/Hakkımızda.png" Style="{StaticResource SolMenu_Image}"/>
+                                    <Label Content="Hakkımızda" Style="{StaticResource SolMenu_Label}"/>
+                                </DockPanel>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Height="150" Margin="0,0,0,20">
+                            <Image Name="Versiyon_Button" Style="{StaticResource SolMenu_ArkaFon_Image}"/>
+                            <Canvas>
+                                <Border Style="{StaticResource SolMenu_Versiyon_Border}">
+                                    <Label Style="{StaticResource SolMenu_Versiyon_Label}"/>
+                                </Border>
+                            </Canvas>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border  Grid.Row="1" Grid.Column="1" Background="#FFEEEEEE" >
+                    <!-- İçerik Alanı-->
+                    <Grid x:Name="Menu_icerik"/>
+                </Border>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
