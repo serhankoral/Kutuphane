@@ -200,9 +200,6 @@
     <Resource Include="images\background\Karşılama_Ekranı_ArkaFon_2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Admin.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="images\icon\Admin.png" />
   </ItemGroup>
   <ItemGroup>
