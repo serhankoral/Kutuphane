@@ -66,8 +66,14 @@
             <Label Background="#FF134187"  Foreground="White" Content="Stok Adeti" Panel.ZIndex="5" RenderTransformOrigin="6.277,4.615" Canvas.Left="482" Canvas.Top="341" Width="75" Height="25"/>
             <TextBox x:Name="kitap_stok_adeti" Height="25" Panel.ZIndex="6" Width="125" Canvas.Left="561" Canvas.Top="341" Background="White" PreviewTextInput="kitap_stok_adeti_PreviewTextInput" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" />
             <Label Background="#FF134187"  Foreground="White" Content="Demirbaş No" Panel.ZIndex="5" RenderTransformOrigin="6.277,4.615" Canvas.Left="725" Canvas.Top="309" Width="85" Height="25"/>
-            <TextBox x:Name="kitap_debirbas_no" Height="25" Panel.ZIndex="6" Width="104" Canvas.Left="725" Canvas.Top="341" Background="#FFD6D6D6" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" PreviewTextInput="kitap_stok_adeti_PreviewTextInput"/>
-            <Button Content="x"  Style="{StaticResource Mini_Butonlar_Style}"  Template="{StaticResource Mini_Butonlar_Control}" x:Name="btn_kapat" Click="btn_kapat_Click" Canvas.Left="831" Canvas.Top="45" RenderTransformOrigin="0.497,0.051" Height="30"/>
+            <TextBlock x:Name="TargetControl" Text="Hover over me!" Canvas.Left="734" Canvas.Top="371" />
+            <Popup PlacementTarget="{Binding ElementName=TargetControl}" Style="{StaticResource TooltipPopupStyle}">
+                <Border BorderBrush="Red" BorderThickness="1" Background="White">
+                    <TextBlock Text="This is a Popup behaving somewhat like the tooltip!" Margin="10" />
+                </Border>
+            </Popup>
+            <TextBox x:Name="kitap_debirbas_no" Height="25" Panel.ZIndex="6" Width="104" Canvas.Left="725" Canvas.Top="341" Background="#FFD6D6D6" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Center" PreviewTextInput="kitap_stok_adeti_PreviewTextInput" MouseEnter="kitap_debirbas_no_MouseMove"/>
+            <Button Content="x" ToolTip="Kapat" Style="{StaticResource Mini_Butonlar_Style}"  Template="{StaticResource Mini_Butonlar_Control}" x:Name="btn_kapat" Click="btn_kapat_Click" Canvas.Left="831" Canvas.Top="45" RenderTransformOrigin="0.497,0.051" Height="30"/>
             <Image Source="images/icon/Admin.png" Width="100" Canvas.Left="710" Canvas.Top="109"/>
             <Ellipse Height="9
                      " Width="110" Canvas.Left="706" Canvas.Top="240">

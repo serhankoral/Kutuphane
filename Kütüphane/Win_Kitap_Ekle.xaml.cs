@@ -41,5 +41,10 @@ namespace Kütüphane
         {
             this.DragMove();
         }
+
+        private void kitap_debirbas_no_MouseMove(object sender, MouseEventArgs e)
+        {
+                
+        }
     }
 }

@@ -109,37 +109,37 @@
                             <RowDefinition/>
                             <RowDefinition  Height="170"/>
                         </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="0" Style="{StaticResource SolMenu_StackPanel}">
-                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz" x:Name="Menu_Kitap_Listesi_Butonu" Click="Menu_Kitap_Listesi_Butonu_Click">
+                        <StackPanel Grid.Row="0" Style="{StaticResource SolMenu_StackPanel}" x:Name="menu_stackpanel">
+                            <ToggleButton Style="{StaticResource SolMenu_Button}" Checked="Bilgi_Label_Yaz" x:Name="Menu_Kitap_Listesi_Butonu" Click="Menu_Kitap_Listesi_Butonu_Click">
                                 <DockPanel Style="{StaticResource SolMenu_DockPanel}">
                                     <Image Source="/images/icon/Kitap_Liste.png" Style="{StaticResource SolMenu_Image}"/>
                                     <Label  Content="Kitap Listesi" Style="{StaticResource SolMenu_Label}"/>
                                 </DockPanel>
-                            </Button>
-                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz">
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource SolMenu_Button}" Checked="Bilgi_Label_Yaz">
                                 <DockPanel  Style="{StaticResource SolMenu_DockPanel}">
                                     <Image Source="/images/icon/Emanet_Kitap_Listesi.png" Style="{StaticResource SolMenu_Image}"/>
                                     <Label Content="Emanet Listesi" Style="{StaticResource SolMenu_Label}"/>
                                 </DockPanel>
-                            </Button>
-                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz">
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource SolMenu_Button}" Checked="Bilgi_Label_Yaz">
                                 <DockPanel Style="{StaticResource SolMenu_DockPanel}">
                                     <Image Source="/images/icon/Zamanı_Dolanlar.png" Style="{StaticResource SolMenu_Image}"/>
                                     <Label Content="Zamanı Dolanlar" Style="{StaticResource SolMenu_Label}" />
                                 </DockPanel>
-                            </Button>
-                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz">
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource SolMenu_Button}" Checked="Bilgi_Label_Yaz">
                                 <DockPanel Style="{StaticResource SolMenu_DockPanel}">
                                     <Image Source="/images/icon/Ayarlar.png" Style="{StaticResource SolMenu_Image}"/>
                                     <Label Content="Ayarlar" Style="{StaticResource SolMenu_Label}"/>
                                 </DockPanel>
-                            </Button>
-                            <Button Style="{StaticResource SolMenu_Button}" MouseMove="Bilgi_Label_Yaz">
+                            </ToggleButton>
+                            <ToggleButton Style="{StaticResource SolMenu_Button}" Checked="Bilgi_Label_Yaz">
                                 <DockPanel Style="{StaticResource SolMenu_DockPanel}">
                                     <Image Source="/images/icon/Hakkımızda.png" Style="{StaticResource SolMenu_Image}"/>
                                     <Label Content="Hakkımızda" Style="{StaticResource SolMenu_Label}"/>
                                 </DockPanel>
-                            </Button>
+                            </ToggleButton>
                         </StackPanel>
                         <StackPanel Grid.Row="1" Height="150" Margin="0,0,0,20">
                             <Image Name="Versiyon_Button" Style="{StaticResource SolMenu_ArkaFon_Image}"/>
