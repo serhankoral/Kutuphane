@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kütüphane.Classlar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Kütüphane
 {
@@ -26,13 +28,13 @@ namespace Kütüphane
         MainWindow gk = (MainWindow)Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
         private void kitap_stok_adeti_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if(!char.IsDigit(e.Text,e.Text.Length-1) )
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
             { e.Handled = true; }
         }
 
         private void btn_kapat_Click(object sender, RoutedEventArgs e)
         {
-            
+
             gk.Opacity = 1;
             this.Close();
         }
@@ -42,9 +44,9 @@ namespace Kütüphane
             this.DragMove();
         }
 
-        private void kitap_debirbas_no_MouseMove(object sender, MouseEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-                
+            bonus.PopupShow(test_popup);
         }
     }
 }

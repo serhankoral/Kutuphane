@@ -74,6 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classlar\bonus.cs" />
     <Compile Include="Classlar\DBbaglanti.cs" />
     <Compile Include="Classlar\Hata.cs" />
     <Compile Include="Classlar\UcCagircs.cs" />
