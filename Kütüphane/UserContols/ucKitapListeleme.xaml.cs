@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kütüphane.Classlar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,11 @@ namespace Kütüphane.UserContols
             temp_kitap_ekle.Owner = gk;
             gk.Opacity = 0.3;
             temp_kitap_ekle.ShowDialog();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            DBIslemci.GridDoldur(dtg_KitapListeleme);
         }
     }
 }

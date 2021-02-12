@@ -76,6 +76,7 @@
     </ApplicationDefinition>
     <Compile Include="Classlar\bonus.cs" />
     <Compile Include="Classlar\DBbaglanti.cs" />
+    <Compile Include="Classlar\DBIslemci.cs" />
     <Compile Include="Classlar\Hata.cs" />
     <Compile Include="Classlar\UcCagircs.cs" />
     <Compile Include="UserContols\ucKitapListeleme.xaml.cs">
