@@ -24,7 +24,11 @@
                       Background="{x:Null}" 
                       BorderBrush="{x:Null}" 
                       Foreground="#FF0F7DD8"
-                      RowHeight="30"                      >
+                      RowHeight="30"                      
+                      SelectionMode="Single"
+                      HeadersVisibility="Column"
+                      AutoGenerateColumns="False"
+                      >
                 <DataGrid.Columns>
                     <DataGridTextColumn
                         Binding="{Binding Path=Barkod}"
@@ -58,6 +62,15 @@
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
+                    <DataGridTextColumn 
+                        Binding="{Binding Path=YazarAdiID}"
+                        Header="Yazar Adı"/>
+                    <DataGridTextColumn
+                        Binding="{Binding Path=ID}"
+                        MaxWidth="0"
+                        Width="0"
+                        Visibility="Hidden"
+                        />
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
@@ -66,6 +79,6 @@
                 <Button  Style="{StaticResource ucKitap_Listeleme_Kitap_Ekle_Button}" Click="Kitap_Ekle_Button_Click"/>
             </StackPanel>
         </Border>
-            
+
     </Grid>
 </UserControl>
