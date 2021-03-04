@@ -205,11 +205,12 @@
     <Resource Include="images\icon\Admin.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sqlite Program\sqlquerytool-x64.exe" />
     <Resource Include="images\icon\kapatma.png" />
     <Resource Include="images\icon\maximize.png" />
     <Resource Include="images\icon\minimize.png" />
     <Resource Include="images\icon\normal.png" />
-    <Content Include="Sqlite Expert\SQLiteExpertPersSetup64.exe" />
+    <Content Include="Sqlite Program\SQLiteExpertPersSetup64.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

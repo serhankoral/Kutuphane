@@ -12,7 +12,54 @@
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
-            <DataGrid x:Name="dtg_KitapListeleme" ItemsSource="{Binding}"/>
+            <DataGrid x:Name="dtg_KitapListeleme" 
+                      HorizontalGridLinesBrush="#FF0F7DD8" 
+                      VerticalGridLinesBrush="#FF0F7DD8" 
+                      CanUserAddRows="False" 
+                      CanUserDeleteRows="False" 
+                      CanUserResizeColumns="True"
+                      CanUserResizeRows="False"
+                      CanUserReorderColumns="False"
+                      IsReadOnly="True" 
+                      Background="{x:Null}" 
+                      BorderBrush="{x:Null}" 
+                      Foreground="#FF0F7DD8"
+                      RowHeight="30"                      >
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Binding="{Binding Path=Barkod}"
+                        Header="Barkod"
+                        CanUserReorder="False"
+                        CanUserResize="True"
+                        CanUserSort="True"
+                        MinWidth="50"                        
+                        >
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Padding" Value="5"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Background" Value="#2e61af"/>
+                                <Setter Property="BorderBrush" Value="#2e61af"/>
+                                <Setter Property="BorderThickness" Value="5,0,0,0"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="true">
+                                        <Setter Property="Background" Value="#2e61af"/>
+                                        <Setter Property="BorderBrush" Value="White"/>
+                                        <Setter Property="BorderThickness" Value="5,0,0,0"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
         </Border>
         <Border Grid.Row="1" Background="White">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
